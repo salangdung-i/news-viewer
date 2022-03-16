@@ -1,0 +1,21 @@
+.categories {
+  display: flex;
+  padding: 1em;
+  width: 768px;
+  margin: 0 auto;
+margin-top: 10px;
+}
+
+.category {
+  text-align: center;
+  width: 100px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding-bottom: 0.25rem;
+}
+
+.category:hover {
+  color:#495057;
+  border-bottom: 3px solid #495057;
+  /* margin-left: 1rem; */
+}
