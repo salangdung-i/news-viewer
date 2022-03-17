@@ -3,14 +3,14 @@
 <br/>
 <br/>
 
-### 기술스택 
+## 기술스택 
 - React Hook
 - JS(ES6+)
 - HTML5
 - PostCSS
 <br/><br/>
 
-### 프로젝트 구조 
+## 프로젝트 구조 
 ```bash
 ├── App
 │   └── NewsPage
@@ -23,7 +23,7 @@
 <br/>
 
 ## 구현한 방법과 이유에 대한 간략한 내용
-React Hook과 PostCSS로 구현한 일정 관리 뉴스 뷰어 웹 애플리케이션입니다.
+React Hook과 PostCSS로 구현한 뉴스 뷰어 웹 애플리케이션입니다.
 <br/>
 📖 첫 번째 구현 시 `리액트를 다루는 기술` 책을 보고 공부하며 구현하였습니다.   
 📖 두 번째 구현 시에 다시 초기 상태로 만든 후 혼자 만들어 보았습니다.
@@ -47,7 +47,7 @@ newsapi API를 사용해 뉴스데이터를 받아오는데 사용했습니다.
 <br/>
 <br/>
 
-### 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
+## 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
 1. env Error  
 이전에 첫 번째 만들 때 API key를 그대로 노출하는 로직이었기에 이번에는 API key를 보호하려고 env를 사용했습니다. [개발자 도구>Network>Request URL]에 API KEY 계속해서 undefined으로 나오는 에러를 겪었습니다. 구글링해보니 env 설정 후 서버를 다시 컸다가 켜야 적용된다는 것을 알고 오류를 해결했습니다.
 
