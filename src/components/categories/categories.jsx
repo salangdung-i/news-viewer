@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from '../../../node_modules/react-router/index';
 import styles from '../categories/categories.module.css';
 
 const categories = [
@@ -36,10 +37,23 @@ const categories = [
   }
 ];
 
-const Categories = () => {
+const Categories = ({ category }) => {
+  const navigate = useNavigate();
+  const goToCategory = (category) => {
+    navigate(`/${category}`);
+  }
+
   return (
     <div className={styles.categories}>
-      {categories.map(category => <div className={styles.category}>{category.text}</div>)}
+      {categories.map(c =>
+        <div
+          className={`${styles.category} ${category === c.name ? styles.active : ''}`}
+          key={c.name}
+          onClick={() => goToCategory(c.name)}
+        >
+          {c.text}
+        </div>
+      )}
     </div>
   );
 }
