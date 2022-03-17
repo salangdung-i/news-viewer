@@ -1,5 +1,7 @@
 # 리액트를 이용한 뉴스 뷰어📰
-<img src="public/images/newsviewer.gif" title="실행화면"> 
+<img src="public/image/newsviewer.png" title="실행화면"> 
+<br/>
+<br/>
 
 ### 기술스택 
 - React Hook
@@ -14,18 +16,21 @@
 │   └── NewsPage
 │       ├── Categories
 │       └── NewsList
-│       
+│           └── NewsItem
+├── Service
+│   └── newsService
 ``` 
 <br/>
 
-### 구현한 방법과 이유에 대한 간략한 내용
+## 구현한 방법과 이유에 대한 간략한 내용
 React Hook과 PostCSS로 구현한 일정 관리 뉴스 뷰어 웹 애플리케이션입니다.
-<br>
+<br/>
 📖 첫 번째 구현 시 `리액트를 다루는 기술` 책을 보고 공부하며 구현하였습니다.   
 📖 두 번째 구현 시에 다시 초기 상태로 만든 후 혼자 만들어 보았습니다.
-
-### axios
-axios는 현재 가장 많이 사용되고 있는 자바스크립트 HTTP 클라이언트이다. 이 라이브러리의 특징은 HTTP요청을 Promise기반으로 처리한다는 점이다. 
+<br/><br/>
+## axios
+axios는 현재 가장 많이 사용되고 있는 자바스크립트 HTTP 클라이언트 입니다. 이 라이브러리의 특징은 HTTP요청을 Promise기반으로 처리한다는 점입니다.   
+[axios 사용 예시]
 
 ```
 const onClick = () => {
@@ -35,21 +40,24 @@ const onClick = () => {
 };
 ```
 
-### newsapi API
+## newsapi API
 [newsAPI](https://newsapi.org/)
-
+newsapi API를 사용해 뉴스데이터를 받아오는데 사용했습니다. 
+<br/>
 <br/>
 <br/>
 
 ### 구현하면서 어려웠던 점과 해결 방법 (Error Handling Log)
-api key를 보호하려고 env를 사용했는데 계속 undifined가 나왔다. 
-설정후 yarn start로 다시 로그인 해야하는 것 
+1. env Error  
+이전에 첫 번째 만들 때 API key를 그대로 노출하는 로직이었기에 이번에는 API key를 보호하려고 env를 사용했습니다. [개발자 도구>Network>Request URL]에 API KEY 계속해서 undefined으로 나오는 에러를 겪었습니다. 구글링해보니 env 설정 후 서버를 다시 컸다가 켜야 적용된다는 것을 알고 오류를 해결했습니다.
 
-services에 따로 모아서 newsapi
+2. Service에서 newsapi axios 처리하기   
+코드에 Axios 처리되는 로직을 한데 묶어 처리하고 싶어 services에 따로 모아서 코딩했습니다. 이렇게 처리하려 했던 이유는 NEWS API 이외에 다른 WEATHER API도 사용해서 뉴스 뷰어를 좀 더 다채롭게 꾸며보고자 함이었는데, 디자인적으로 어수선해 보여 WEATHER API를 가져오는 것을 Service에 만들어 놓긴 했지만 사용하지 않았습니다. 
 
-artcles map으돌리는데  Cannot read properties of null (reading 'map')
-artcles && 로 처리 
+3. React-router   
+기능 구현을 한 후 나중에 React-router를 추가하는 과정에서 오류를 많이 겪었습니다.
+router의 버전을 확인하지 않고 깔고 깔다가 내가 설치한 버전이 무엇인지 import 될 때 왜 안되는지? 하고 다시 router를 설치했다가 라이브러리가 꼬인 느낌을 받았습니다. 이후 package.json 파일을 보고 지우고 다시 최신버전으로 설치하여 처리하였습니다.
 
-날씨 api를 사용해서 뭔가 하고싶었지만 UI적으로 별로였음.. ㅎ 기능뻄
-newsapi 불러오는 로직 따로 뺏는데 이것떄메 좀 엉킴
 
+4. Cannot read properties of null (reading 'map')  
+가끔 깜빡 실수하는 에러인데 페이지가 마운트된 직후 아직 변수에 실행된 결괏값이 들어오지 않았을 때, 그 변수에 map을 사용했을 때 'Cannot read properties of null (reading 'map')' 오류문을 접하는 경우가 종종 있습니다. 이때 변수 && 변수.map(x=> (...))로 이 오류를 해결했습니다. <br/>
