@@ -1,0 +1,34 @@
+.newsItem {
+  display: flex;
+  margin: 50px auto;
+}
+
+.thumbmail {
+  margin-left: 1rem;
+}
+
+.contents {
+  margin-left: 1rem;
+}
+
+.img {
+  display: block;
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.h2 {
+  margin: 0;
+}
+
+.a{
+  color: black;
+}
+
+.p {
+  margin: 0;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  white-space: normal;
+}
