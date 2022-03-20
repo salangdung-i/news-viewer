@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NewsItem from '../newsItem/newsItem';
 import styles from '../newsList/newsList.module.css';
 

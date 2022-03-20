@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useParams } from '../../../node_modules/react-router/index';
 
 import Categories from '../categories/categories';
 import NewsList from '../newsList/newsList';
