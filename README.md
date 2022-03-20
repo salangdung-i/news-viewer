@@ -62,10 +62,8 @@ router의 버전을 확인하지 않고 깔고 깔다가 내가 설치한 버전
 4. Cannot read properties of null (reading 'map')  
 가끔 깜빡 실수하는 에러인데 페이지가 마운트된 직후 아직 변수에 실행된 결괏값이 들어오지 않았을 때, 그 변수에 map을 사용했을 때 'Cannot read properties of null (reading 'map')' 오류문을 접하는 경우가 종종 있습니다. 이때 변수 && 변수.map(x=> (...))로 이 오류를 해결했습니다. <br/>
 
-5. CORS 
-local에서 테스트 할 때는 해당 에러가 발생하지 않았는데, GitHub Pages에서 배포한 이후부터 HTTP 426 ERROR가 발생했다. CORS를 해결하기 위해서 stackover flow를 참고하여 newsapi를 불러오는 URL앞에 https://cors-anywhere.herokuapp.com/ 를 붙여보았지만, NewsAPI자체에서 배포 시에는 무료로 제공하지 않아서 생기는 문제로 Newsapi는 더 이상 브라우저에서 요청할 수 없어서 해결하지 못했다.
-CORS에 대한 개념 공부도 하고, 면접 질문으로 받았을 때 개념은 알고 있지만 직접경험해 본 적은 없어서 아쉬웠었는데... 결국 해결하진 못했지만, 처음 겪어보고 해결을 시도한 것에 대해서 의의를 두었다.
-
-[stackoverflow 1](https://stackoverflow.com/questions/61951713/problem-with-cors-policy-when-making-a-request-to-https-newsapi-org)
-
-[stackoverflow 2](https://stackoverflow.com/questions/62157026/error-426-from-newsapi-org-once-i-deployed-my-site-on-netlify)
+5. CORS.  
+local에서 테스트 할 때는 해당 에러가 발생하지 않았는데, GitHub Pages에서 배포한 이후부터 HTTP 426 ERROR가 발생습니다. CORS를 해결하기 위해서 stackover flow를 참고하여 newsapi를 불러오는 URL앞에 https://cors-anywhere.herokuapp.com/ 를 붙여보았지만, NewsAPI자체에서 배포 시에는 무료로 제공하지 않아서 생기는 문제로 Newsapi는 더 이상 브라우저에서 요청할 수 없어서 해결하지 못했습니다.
+CORS에 대한 개념 공부도 하고, 면접 질문으로 받았을 때 개념은 알고 있지만 직접경험해 본 적은 없어서 아쉬웠었는데... 결국 해결하진 못했지만, 처음 겪어보고 해결을 시도한 것에 대해서 의의를 두었습니다.
+- [stackoverflow 1](https://stackoverflow.com/questions/61951713/problem-with-cors-policy-when-making-a-request-to-https-newsapi-org)
+- [stackoverflow 2](https://stackoverflow.com/questions/62157026/error-426-from-newsapi-org-once-i-deployed-my-site-on-netlify)
