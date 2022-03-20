@@ -6,8 +6,8 @@ import NewsList from '../newsList/newsList';
 
 const NewsPage = ({ newsService }) => {
   const params = useParams();
-  const category = params.category === 'news-viewer' ? 'all' : params.category;
-
+  // const category = params.category === 'news-viewer' ? 'all' : params.category;
+  const category = params.category || 'all';
   return (
     <>
       <Categories category={category} />
